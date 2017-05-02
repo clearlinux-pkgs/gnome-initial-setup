@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.24.0
-Release  : 3
+Release  : 4
 URL      : http://ftp.gnome.org/pub/gnome/sources/gnome-initial-setup/3.24/gnome-initial-setup-3.24.0.tar.xz
 Source0  : http://ftp.gnome.org/pub/gnome/sources/gnome-initial-setup/3.24/gnome-initial-setup-3.24.0.tar.xz
 Summary  : No detailed summary available
@@ -19,6 +19,8 @@ BuildRequires : intltool
 BuildRequires : krb5-dev
 BuildRequires : perl(XML::Parser)
 BuildRequires : pkgconfig(accountsservice)
+BuildRequires : pkgconfig(cheese)
+BuildRequires : pkgconfig(cheese-gtk)
 BuildRequires : pkgconfig(gdm)
 BuildRequires : pkgconfig(geocode-glib-1.0)
 BuildRequires : pkgconfig(gio-2.0)
@@ -82,7 +84,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1493741734
+export SOURCE_DATE_EPOCH=1493743713
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -94,7 +96,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1493741734
+export SOURCE_DATE_EPOCH=1493743713
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-initial-setup
