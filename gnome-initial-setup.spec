@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.24.0
-Release  : 1
+Release  : 2
 URL      : http://ftp.gnome.org/pub/gnome/sources/gnome-initial-setup/3.24/gnome-initial-setup-3.24.0.tar.xz
 Source0  : http://ftp.gnome.org/pub/gnome/sources/gnome-initial-setup/3.24/gnome-initial-setup-3.24.0.tar.xz
 Summary  : No detailed summary available
@@ -13,18 +13,11 @@ License  : GPL-2.0
 Requires: gnome-initial-setup-bin
 Requires: gnome-initial-setup-data
 Requires: gnome-initial-setup-locales
-BuildRequires : automake
-BuildRequires : automake-dev
 BuildRequires : e2fsprogs-dev
 BuildRequires : gettext
-BuildRequires : gettext-bin
 BuildRequires : intltool
 BuildRequires : krb5-dev
-BuildRequires : libtool
-BuildRequires : libtool-dev
-BuildRequires : m4
 BuildRequires : perl(XML::Parser)
-BuildRequires : pkg-config-dev
 BuildRequires : pkgconfig(accountsservice)
 BuildRequires : pkgconfig(gdm)
 BuildRequires : pkgconfig(geocode-glib-1.0)
@@ -39,12 +32,13 @@ BuildRequires : pkgconfig(iso-codes)
 BuildRequires : pkgconfig(json-glib-1.0)
 BuildRequires : pkgconfig(libgeoclue-2.0)
 BuildRequires : pkgconfig(libnm)
+BuildRequires : pkgconfig(libnm-glib)
+BuildRequires : pkgconfig(libnm-gtk)
 BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(polkit-gobject-1)
 BuildRequires : pkgconfig(pwquality)
 BuildRequires : pkgconfig(rest-0.7)
 BuildRequires : pkgconfig(webkit2gtk-4.0)
-Patch1: 0001-Disable-NetworkManager-integration.patch
 
 %description
 GNOME initial setup
@@ -80,15 +74,14 @@ locales components for the gnome-initial-setup package.
 
 %prep
 %setup -q -n gnome-initial-setup-3.24.0
-%patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1493126262
-%reconfigure --disable-static
+export SOURCE_DATE_EPOCH=1493738666
+%configure --disable-static
 make V=1  %{?_smp_mflags}
 
 %check
@@ -99,7 +92,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1493126262
+export SOURCE_DATE_EPOCH=1493738666
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-initial-setup
