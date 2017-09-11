@@ -1,5 +1,25 @@
-3.24.2
+3.26.0
 
+ * Translation updates
+
+3.25.92
+
+ * Translation updates
+
+3.25.4
+
+ * Use Unicode in translatable strings
+ * Adjust to g-s-d's plugin removals
+ * Translation updates
+
+3.25.3
+
+ * Support a vendor configuration file
+ * Update text direction when the locale changes
+ * Allow configuring network connections
+ * Copy monitor configuration to user session
+ * Sync user account page with control-center
+ * Show strength indicator for passwords
  * Translation updates
 
 3.24.0
