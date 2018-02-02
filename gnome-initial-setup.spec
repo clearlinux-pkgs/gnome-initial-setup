@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.26.0
-Release  : 8
+Release  : 9
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.26/gnome-initial-setup-3.26.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.26/gnome-initial-setup-3.26.0.tar.xz
 Summary  : No detailed summary available
