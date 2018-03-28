@@ -10,12 +10,12 @@ libgdm.so.1
 libgeoclue-2.so.0
 libgio-2.0.so.0
 libglib-2.0.so.0
-libgnome-desktop-3.so.12
+libgnome-desktop-3.so.17
 libgoa-1.0.so.0
 libgoa-backend-1.0.so.1
 libgobject-2.0.so.0
 libgtk-3.so.0
-libgweather-3.so.6
+libgweather-3.so.15
 libibus-1.0.so.5
 libjson-glib-1.0.so.0
 libkrb5.so.3
