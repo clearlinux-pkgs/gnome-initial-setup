@@ -4,15 +4,17 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.28.0
-Release  : 13
+Release  : 14
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.28/gnome-initial-setup-3.28.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.28/gnome-initial-setup-3.28.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
 Requires: gnome-initial-setup-bin
+Requires: gnome-initial-setup-license
 Requires: gnome-initial-setup-data
 Requires: gnome-initial-setup-locales
+BuildRequires : buildreq-gnome
 BuildRequires : e2fsprogs-dev
 BuildRequires : gettext
 BuildRequires : intltool
@@ -57,7 +59,8 @@ and safe way to prepare a new system.
 %package bin
 Summary: bin components for the gnome-initial-setup package.
 Group: Binaries
-Requires: gnome-initial-setup-data
+Requires: gnome-initial-setup-data = %{version}-%{release}
+Requires: gnome-initial-setup-license = %{version}-%{release}
 
 %description bin
 bin components for the gnome-initial-setup package.
@@ -69,6 +72,14 @@ Group: Data
 
 %description data
 data components for the gnome-initial-setup package.
+
+
+%package license
+Summary: license components for the gnome-initial-setup package.
+Group: Default
+
+%description license
+license components for the gnome-initial-setup package.
 
 
 %package locales
@@ -88,7 +99,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522199515
+export SOURCE_DATE_EPOCH=1537644436
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -107,8 +118,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1522199515
+export SOURCE_DATE_EPOCH=1537644436
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/doc/gnome-initial-setup
+cp COPYING %{buildroot}/usr/share/doc/gnome-initial-setup/COPYING
 %make_install
 %find_lang gnome-initial-setup
 
@@ -128,6 +141,10 @@ rm -rf %{buildroot}
 /usr/share/gnome-session/sessions/gnome-initial-setup.session
 /usr/share/gnome-shell/modes/initial-setup.json
 /usr/share/polkit-1/rules.d/20-gnome-initial-setup.rules
+
+%files license
+%defattr(-,root,root,-)
+/usr/share/doc/gnome-initial-setup/COPYING
 
 %files locales -f gnome-initial-setup.lang
 %defattr(-,root,root,-)
