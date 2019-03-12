@@ -1,3 +1,10 @@
-3.30.0
+3.32.0
+accountsservice-dev
 e2fsprogs-dev
+gdm-dev
+gsettings-desktop-schemas-dev
+ibus-dev
 krb5-dev
+libpwquality-dev
+pkgconfig(libsecret-1)
+polkit-dev
