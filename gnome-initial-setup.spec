@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.32.1
-Release  : 17
+Release  : 18
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.32/gnome-initial-setup-3.32.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.32/gnome-initial-setup-3.32.1.tar.xz
 Summary  : Simple, easy, and safe way to prepare a new system
@@ -19,7 +19,9 @@ BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : e2fsprogs-dev
 BuildRequires : gdm-dev
+BuildRequires : gsettings-desktop-schemas-dev
 BuildRequires : ibus-dev
+BuildRequires : krb5-dev
 BuildRequires : libpwquality-dev
 BuildRequires : pkgconfig(accountsservice)
 BuildRequires : pkgconfig(cheese)
@@ -94,7 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554480047
+export SOURCE_DATE_EPOCH=1554487193
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
