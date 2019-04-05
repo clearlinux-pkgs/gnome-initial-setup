@@ -1,4 +1,4 @@
-3.32.0
+3.32.1
 accountsservice-dev
 e2fsprogs-dev
 gdm-dev
@@ -6,5 +6,11 @@ gsettings-desktop-schemas-dev
 ibus-dev
 krb5-dev
 libpwquality-dev
+pkgconfig(accountsservice)
+pkgconfig(gdm)
+pkgconfig(ibus-1.0)
+pkgconfig(krb5)
 pkgconfig(libsecret-1)
+pkgconfig(polkit-gobject-1)
+pkgconfig(pwquality)
 polkit-dev
