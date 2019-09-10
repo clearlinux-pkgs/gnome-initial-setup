@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.34.0
-Release  : 21
+Release  : 22
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.0.tar.xz
 Summary  : Simple, easy, and safe way to prepare a new system
