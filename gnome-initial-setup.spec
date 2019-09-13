@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.34.0
-Release  : 22
+Release  : 23
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.0.tar.xz
 Summary  : Simple, easy, and safe way to prepare a new system
@@ -14,13 +14,14 @@ Requires: gnome-initial-setup-data = %{version}-%{release}
 Requires: gnome-initial-setup-libexec = %{version}-%{release}
 Requires: gnome-initial-setup-license = %{version}-%{release}
 Requires: gnome-initial-setup-locales = %{version}-%{release}
-Requires: gnome-initial-setup-services = %{version}-%{release}
 BuildRequires : accountsservice-dev
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : e2fsprogs-dev
 BuildRequires : gdm-dev
+BuildRequires : gsettings-desktop-schemas-dev
 BuildRequires : ibus-dev
+BuildRequires : krb5-dev
 BuildRequires : libpwquality-dev
 BuildRequires : pkgconfig(accountsservice)
 BuildRequires : pkgconfig(cheese)
@@ -86,14 +87,6 @@ Group: Default
 locales components for the gnome-initial-setup package.
 
 
-%package services
-Summary: services components for the gnome-initial-setup package.
-Group: Systemd services
-
-%description services
-services components for the gnome-initial-setup package.
-
-
 %prep
 %setup -q -n gnome-initial-setup-3.34.0
 %patch1 -p1
@@ -103,8 +96,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1568044781
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1568335908
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -113,7 +105,7 @@ export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sect
 export FCFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -ffat-lto-objects -ffunction-sections -flto=4 -fno-semantic-interposition "
-CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
+CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dsystemd=false  builddir
 ninja -v -C builddir
 
 %install
@@ -141,17 +133,6 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/gnome-initial-setup/COPYING
-
-%files services
-%defattr(-,root,root,-)
-/usr/lib/systemd/user/gnome-initial-setup-copy-worker.service
-/usr/lib/systemd/user/gnome-initial-setup-first-login.service
-/usr/lib/systemd/user/gnome-initial-setup.service
-/usr/lib/systemd/user/gnome-session.target.wants/gnome-initial-setup-copy-worker.service
-/usr/lib/systemd/user/gnome-session.target.wants/gnome-initial-setup-first-login.service
-/usr/lib/systemd/user/gnome-session.target.wants/gnome-welcome-tour.service
-/usr/lib/systemd/user/gnome-session@gnome-initial-setup.target.wants/gnome-initial-setup.service
-/usr/lib/systemd/user/gnome-welcome-tour.service
 
 %files locales -f gnome-initial-setup.lang
 %defattr(-,root,root,-)
