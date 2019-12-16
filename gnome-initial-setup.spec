@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.34.1
-Release  : 25
+Release  : 26
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.34/gnome-initial-setup-3.34.1.tar.xz
 Summary  : No detailed summary available
@@ -19,7 +19,9 @@ BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
 BuildRequires : e2fsprogs-dev
 BuildRequires : gdm-dev
+BuildRequires : gsettings-desktop-schemas-dev
 BuildRequires : ibus-dev
+BuildRequires : krb5-dev
 BuildRequires : libpwquality-dev
 BuildRequires : pkgconfig(accountsservice)
 BuildRequires : pkgconfig(cheese)
@@ -35,9 +37,10 @@ BuildRequires : pkgconfig(ibus-1.0)
 BuildRequires : pkgconfig(json-glib-1.0)
 BuildRequires : pkgconfig(krb5)
 BuildRequires : pkgconfig(libgeoclue-2.0)
-BuildRequires : pkgconfig(libnm-glib)
-BuildRequires : pkgconfig(libnm-gtk)
+BuildRequires : pkgconfig(libnm)
+BuildRequires : pkgconfig(libnma)
 BuildRequires : pkgconfig(libsecret-1)
+BuildRequires : pkgconfig(packagekit-glib2)
 BuildRequires : pkgconfig(polkit-gobject-1)
 BuildRequires : pkgconfig(pwquality)
 BuildRequires : pkgconfig(rest-0.7)
@@ -87,6 +90,7 @@ locales components for the gnome-initial-setup package.
 
 %prep
 %setup -q -n gnome-initial-setup-3.34.1
+cd %{_builddir}/gnome-initial-setup-3.34.1
 %patch1 -p1
 
 %build
@@ -94,7 +98,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570463269
+export SOURCE_DATE_EPOCH=1576106104
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -108,7 +112,7 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-initial-setup
-cp COPYING %{buildroot}/usr/share/package-licenses/gnome-initial-setup/COPYING
+cp %{_builddir}/gnome-initial-setup-3.34.1/COPYING %{buildroot}/usr/share/package-licenses/gnome-initial-setup/122c4f624b853f6b8f131f4f0545e5f675a87d1a
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-initial-setup
 
@@ -130,7 +134,7 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/gnome-initial-setup/COPYING
+/usr/share/package-licenses/gnome-initial-setup/122c4f624b853f6b8f131f4f0545e5f675a87d1a
 
 %files locales -f gnome-initial-setup.lang
 %defattr(-,root,root,-)
