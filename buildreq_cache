@@ -1,10 +1,8 @@
-3.34.1
+3.34.3
 accountsservice-dev
 e2fsprogs-dev
 gdm-dev
-gsettings-desktop-schemas-dev
 ibus-dev
-krb5-dev
 libpwquality-dev
 pkgconfig(accountsservice)
 pkgconfig(gdm)
