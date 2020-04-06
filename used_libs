@@ -11,7 +11,7 @@ libgdm.so.1
 libgeoclue-2.so.0
 libgio-2.0.so.0
 libglib-2.0.so.0
-libgnome-desktop-3.so.18
+libgnome-desktop-3.so.19
 libgoa-1.0.so.0
 libgoa-backend-1.0.so.1
 libgobject-2.0.so.0
@@ -23,7 +23,6 @@ libkrb5.so.3
 libm.so.6
 libnm.so.0
 libnma.so.0
-libpackagekit-glib2.so.18
 libpango-1.0.so.0
 libpangocairo-1.0.so.0
 libpolkit-gobject-1.so.0

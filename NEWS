@@ -1,17 +1,140 @@
-3.34.3
+3.36.1
+------
 
-* Translation updates:
- - Japanese
- - Malay
-
-3.34.1
+* Previous releases of gnome-initial-setup had an unversioned dependency on
+  libsecret; this release requires libsecret ≥ 0.18.8.  (libsecret 0.18.8 was
+  released as part of GNOME 3.32; GNOME 3.36 includes libsecret 0.20.1.)
 
 * Bugs fixed:
- - !61 mark “Accept” button as suggested action
- - !59 Disable g-i-s in GDM
+ - !78 account: Make parent account usable in case of errors
+ - !79 Improve readability when removing event sources
+ - !80 Fix two crashes when saving parental controls settings
+ - !81 Use g_auto and g_autoptr more
 
-Translation updates:
+* Translation updates:
+ - Bokmål, Norwegian
+ - Dutch
+ - German
+ - Japanese
+ - Romanian
+ - Ukrainian
+
+3.36.0
+------
+
+* Translation updates:
+ - Croatian
+ - Italian
+ - Panjabi
+ - Slovenian
+ - Swedish
+
+3.35.92
+-------
+
+* Two tweaks to the parental controls functionality introduced in the last
+  release:
+ - #94 Add metadata to identify parent account
+ - !77 password: Use malcontent symbolic icon for parent password
+
+* Translation updates:
  - Catalan
+ - Chinese (Taiwan)
+ - Czech
+ - Danish
+ - English (United Kingdom)
+ - Finnish
+ - French
+ - Greek
+ - Hungarian
+ - Indonesian
+ - Karbi
+ - Korean
+ - Lithuanian
+ - Persian
+ - Polish
+ - Portuguese (Brazil)
+ - Spanish
+
+3.35.91
+-------
+
+* New pages have been added to set up parental controls for the new user
+  account. They are shown (or not, by default) based on a checkbox on the
+  (local) user creation page. This feature requires malcontent ≥ 0.5.0
+  <https://gitlab.freedesktop.org/pwithnall/malcontent/> and complements
+  parental controls support already present in Flatpak and GNOME Software. If
+  disabled or if that dependency is not available, no new UI is introduced
+  compared to 3.35.90.
+
+* When running under JHBuild, gnome-keyring is left untouched, and state is not
+  saved when setup is complete. This heuristic is intended to make testing the
+  application during development easier.
+
+* GLib ≥ 2.63.1 is now required.
+
+* Fixed various memory leaks, warnings, and a memory safety bug.
+
+* Translation updates:
+ - Basque
+ - Croatian
+ - Czech
+ - French
+ - Galician
+ - Hungarian
+ - Indonesian
+ - Japanese
+ - Lithuanian
+ - Persian
+ - Serbian
+ - Turkish
+
+3.35.90
+-------
+
+* The final page has been revamped, with minor typography tweaks to other pages
+  (#8).
+
+* The timezone map was updated.
+
+* Three pages have been removed since they were unused in all known
+  configurations:
+
+  - the region page, which has not displayed even if enabled for many years
+    (#90)
+  - the software page, which has not displayed for several releases due to
+    changes in GNOME Software (#59)
+  - the eulas page (!71, #72)
+
+* The providers shown on the goa page can now be customized in the vendor conf
+  file (!63)
+
+* Bugs fixed:
+ - #61 CheeseCameraDeviceMonitor may hang account page during initialization
+ - #82 Support Wi-Fi devices appearing and disappearing dynamically
+ - !53 Change generated avatar for empty name
+
+* Translation updates:
+ - Finnish
+ - Kurdish, Central
+ - Malay
+ - Portuguese (Brazil)
+ - Slovak
+ - Spanish
+ - Swedish
+
+3.35.3
+
+* Bugs fixed:
+ - #85 GNOME intial setup segfaults, possibly due to locale related problems
+ - !59 Disable g-i-s service in GDM
+ - !61 assistant: mark "Accept" button as suggested action
+ - !64 Language: Make language list use full height when search is active
+
+* Translation updates:
+ - Catalan
+ - Galician
+ - Japanese
 
 3.34.0
 
