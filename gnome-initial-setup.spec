@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 3.38.0
-Release  : 30
+Release  : 31
 URL      : https://download.gnome.org/sources/gnome-initial-setup/3.38/gnome-initial-setup-3.38.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/3.38/gnome-initial-setup-3.38.0.tar.xz
 Summary  : No detailed summary available
