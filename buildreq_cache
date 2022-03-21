@@ -1,12 +1,14 @@
-41.4
+42.0
 accountsservice-dev
 gdm-dev
 ibus-dev
 libpwquality-dev
 pkgconfig(accountsservice)
 pkgconfig(gdm)
+pkgconfig(gweather4)
 pkgconfig(ibus-1.0)
 pkgconfig(krb5)
+pkgconfig(libhandy-1)
 pkgconfig(libnm)
 pkgconfig(libnma)
 pkgconfig(libsecret-1)
