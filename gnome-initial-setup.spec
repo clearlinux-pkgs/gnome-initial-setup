@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 42.2
-Release  : 48
+Release  : 49
 URL      : https://download.gnome.org/sources/gnome-initial-setup/42/gnome-initial-setup-42.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/42/gnome-initial-setup-42.2.tar.xz
 Summary  : No detailed summary available
@@ -29,7 +29,6 @@ BuildRequires : pkgconfig(gnome-desktop-3.0)
 BuildRequires : pkgconfig(goa-1.0)
 BuildRequires : pkgconfig(goa-backend-1.0)
 BuildRequires : pkgconfig(gtk+-3.0)
-BuildRequires : pkgconfig(gweather-3.0)
 BuildRequires : pkgconfig(gweather4)
 BuildRequires : pkgconfig(ibus-1.0)
 BuildRequires : pkgconfig(json-glib-1.0)
@@ -94,7 +93,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1653660714
+export SOURCE_DATE_EPOCH=1661966395
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -108,7 +107,7 @@ ninja -v -C builddir
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-initial-setup
-cp %{_builddir}/gnome-initial-setup-42.2/COPYING %{buildroot}/usr/share/package-licenses/gnome-initial-setup/4cc77b90af91e615a64ae04893fdffa7939db84c
+cp %{_builddir}/gnome-initial-setup-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gnome-initial-setup/4cc77b90af91e615a64ae04893fdffa7939db84c
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-initial-setup
 
