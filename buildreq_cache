@@ -1,0 +1,17 @@
+43.0
+accountsservice-dev
+gdm-dev
+ibus-dev
+libpwquality-dev
+pkgconfig(accountsservice)
+pkgconfig(gdm)
+pkgconfig(ibus-1.0)
+pkgconfig(krb5)
+pkgconfig(libadwaita-1)
+pkgconfig(libnm)
+pkgconfig(libnma-gtk4)
+pkgconfig(libsecret-1)
+pkgconfig(polkit-gobject-1)
+pkgconfig(pwquality)
+pkgconfig(rest-1.0)
+polkit-dev
