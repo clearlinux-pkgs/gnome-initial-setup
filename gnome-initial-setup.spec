@@ -4,7 +4,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 43.2
-Release  : 63
+Release  : 64
 URL      : https://download.gnome.org/sources/gnome-initial-setup/43/gnome-initial-setup-43.2.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/43/gnome-initial-setup-43.2.tar.xz
 Summary  : No detailed summary available
