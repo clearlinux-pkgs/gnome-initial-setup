@@ -30,4 +30,4 @@ libpolkit-gobject-1.so.0
 libpwquality.so.1
 librest-1.0.so.0
 libsecret-1.so.0
-libwebkit2gtk-5.0.so.0
+libwebkitgtk-6.0.so.4

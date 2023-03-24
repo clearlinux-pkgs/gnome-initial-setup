@@ -1,22 +1,105 @@
-43.2
+44.0
 ----
 
-* The webkitgtk-6.0 API version is now supported, in addition to the previous
-  webkit2gtk-5.0 API version.
+Bug fixes:
 
-* Bugs fixed:
- - The Shell quick settings menu will now be shown in the Initial Setup session.
-   This regressed when the previous menu was renamed in gnome-shell during the
-   43 cycle. (!166)
+ - The privacy policy links on the Privacy page are now usable. This was a
+   regression in the GTK 4 port, first released as 43.0. (#181)
 
- - Error messages shown during enterprise account setup can now be closed by
-   clicking the Close button. (!169)
+Translation updates:
+ - Bulgarian
+ - Czech
+ - Danish
+ - French
+ - Persian
+ - Polish
+ - Russian
+ - Swedish
+
+44.rc
+-----
+
+Enhancements:
+
+ - The About You page now makes it clear that you can choose a different avatar.
+   (#174)
+
+Bug fixes:
+
+ - Double-clicking on the headerbar no longer makes the window super small.
+   (#136)
+ - The keyboard layout list is no longer empty until you search or expand it.
+   (#165)
+ - Non-ASCII characters in location names are now displayed correctly on the
+   timezone page. Previously, changing the language on the first page would
+   cause them to be mangled. (#177)
+ - StartupWMClass is now set in the .desktop file, allowing GNOME Shell to
+   associate the app window with the desktop file. (!187)
+
+Translation updates:
+
+ - Basque
+ - Belarusian
+ - Catalan
+ - Czech
+ - Finnish
+ - Friulian
+ - Galician
+ - Georgian
+ - German
+ - Greek, Modern (1453-)
+ - Hebrew
+ - Hindi
+ - Hungarian
+ - Indonesian
+ - Korean
+ - Lithuanian
+ - Occitan (post 1500)
+ - Portuguese
+ - Serbian
+ - Slovenian
+ - Spanish
+ - Turkish
+
+44.beta
+-------
+
+* Correctly align the 'Preview' links on the keyboard page. (#150, Automeris
+  naranja)
+
+* Update for removal of WebKitGTK sandbox API in 2.39.5. (!177, Michael Catanzaro)
+
+* Update password page to Adwaita style. (!178, Cassidy James Blaede)
+
+44.alpha.2
+----------
+
+* Unlike 44.alpha.1, this version really can be built against the new
+  webkitgtk-6.0 API from WebKitGTK 2.39.1, as well as webkit2gtk-5.0.
+  (Michael Catanzaro)
+
+* The close button on the "Failed to join domain" dialog now works. (#161)
+
+* The quick settings menu is now correctly shown in the Initial Setup session.
+  (!166)
+
+* The search fields on the keyboard layout and timezone pages now have
+  placeholder text, as recommended by the GNOME HIG. Thanks to sunflowerskater
+  for their first contribution to this project! (#144)
 
 * Translation updates:
  - Abkhazian
- - Dutch
- - Greek, Modern (1453-)
- - Icelandic
+ - Belarusian
+ - Hindi
+ - Interlingue (new in this version)
+
+44.alpha.1
+----------
+
+This is an early release to support building against the new webkitgtk-6.0 API
+from WebKitGTK 2.39.1, or webkit2gtk-5.0 as before. (!164)
+
+There are no other changes compared to the GNOME 43 branch.
 
 43.1
 ----
