@@ -5,7 +5,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 44.0
-Release  : 72
+Release  : 73
 URL      : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
 Summary  : No detailed summary available
@@ -92,29 +92,36 @@ locales components for the gnome-initial-setup package.
 %prep
 %setup -q -n gnome-initial-setup-44.0
 cd %{_builddir}/gnome-initial-setup-44.0
+pushd ..
+cp -a gnome-initial-setup-44.0 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1681153054
+export SOURCE_DATE_EPOCH=1687472905
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -Os -fdata-sections -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -ffunction-sections -flto=auto -fno-semantic-interposition -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dsystemd=false  builddir
 ninja -v -C builddir
+CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 -O3" CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 " LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3" meson --libdir=lib64 --prefix=/usr --buildtype=plain -Dsystemd=false  builddiravx2
+ninja -v -C builddiravx2
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/gnome-initial-setup
 cp %{_builddir}/gnome-initial-setup-%{version}/COPYING %{buildroot}/usr/share/package-licenses/gnome-initial-setup/4cc77b90af91e615a64ae04893fdffa7939db84c || :
+DESTDIR=%{buildroot}-v3 ninja -C builddiravx2 install
 DESTDIR=%{buildroot} ninja -C builddir install
 %find_lang gnome-initial-setup
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -128,6 +135,9 @@ DESTDIR=%{buildroot} ninja -C builddir install
 
 %files libexec
 %defattr(-,root,root,-)
+/V3/usr/libexec/gnome-initial-setup
+/V3/usr/libexec/gnome-initial-setup-copy-worker
+/V3/usr/libexec/gnome-initial-setup-goa-helper
 /usr/libexec/gnome-initial-setup
 /usr/libexec/gnome-initial-setup-copy-worker
 /usr/libexec/gnome-initial-setup-goa-helper
