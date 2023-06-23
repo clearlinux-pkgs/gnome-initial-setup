@@ -5,7 +5,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 44.0
-Release  : 73
+Release  : 74
 URL      : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
 Summary  : No detailed summary available
@@ -41,7 +41,6 @@ BuildRequires : pkgconfig(libnma-gtk4)
 BuildRequires : pkgconfig(libsecret-1)
 BuildRequires : pkgconfig(polkit-gobject-1)
 BuildRequires : pkgconfig(pwquality)
-BuildRequires : pkgconfig(rest-0.7)
 BuildRequires : pkgconfig(rest-1.0)
 BuildRequires : pkgconfig(webkitgtk-6.0)
 BuildRequires : polkit-dev
@@ -101,7 +100,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687472905
+export SOURCE_DATE_EPOCH=1687481281
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
