@@ -4,10 +4,10 @@
 # Using build pattern: meson
 #
 Name     : gnome-initial-setup
-Version  : 44.0
-Release  : 74
-URL      : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
-Source0  : https://download.gnome.org/sources/gnome-initial-setup/44/gnome-initial-setup-44.0.tar.xz
+Version  : 45.0
+Release  : 75
+URL      : https://download.gnome.org/sources/gnome-initial-setup/45/gnome-initial-setup-45.0.tar.xz
+Source0  : https://download.gnome.org/sources/gnome-initial-setup/45/gnome-initial-setup-45.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
@@ -18,6 +18,7 @@ Requires: gnome-initial-setup-locales = %{version}-%{release}
 BuildRequires : accountsservice-dev
 BuildRequires : buildreq-gnome
 BuildRequires : buildreq-meson
+BuildRequires : dconf-dev
 BuildRequires : gdm-dev
 BuildRequires : ibus-dev
 BuildRequires : libpwquality-dev
@@ -52,8 +53,11 @@ BuildRequires : polkit-dev
 GNOME Initial Setup
 ===================
 After acquiring or installing a new system there are a few essential things
-to set up before use. gnome-initial-setup aims to provide a simple, easy,
-and safe way to prepare a new system.
+to set up before use. Initial Setup aims to provide a simple, easy, and safe way
+to prepare a new system. This should only include a few essential steps for
+which we can't provide good defaults. The desired experience is that the system
+boots straight into Initial Setup, and when the setup tasks are completed, we
+smoothly transition into the user session for the newly-created user account.
 
 %package data
 Summary: data components for the gnome-initial-setup package.
@@ -89,10 +93,10 @@ locales components for the gnome-initial-setup package.
 
 
 %prep
-%setup -q -n gnome-initial-setup-44.0
-cd %{_builddir}/gnome-initial-setup-44.0
+%setup -q -n gnome-initial-setup-45.0
+cd %{_builddir}/gnome-initial-setup-45.0
 pushd ..
-cp -a gnome-initial-setup-44.0 buildavx2
+cp -a gnome-initial-setup-45.0 buildavx2
 popd
 
 %build
@@ -100,7 +104,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1687481281
+export SOURCE_DATE_EPOCH=1695682633
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -128,6 +132,8 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files data
 %defattr(-,root,root,-)
 /usr/share/applications/gnome-initial-setup.desktop
+/usr/share/dconf/profile/gnome-initial-setup
+/usr/share/gnome-initial-setup/initial-setup-dconf-defaults
 /usr/share/gnome-session/sessions/gnome-initial-setup.session
 /usr/share/gnome-shell/modes/initial-setup.json
 /usr/share/polkit-1/rules.d/20-gnome-initial-setup.rules
