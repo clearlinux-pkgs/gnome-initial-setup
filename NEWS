@@ -1,13 +1,86 @@
-45.4.1
-------
-
-Remove a new translatable string, accidentally introduced with the enterprise
-user account fix in 45.4. A similar existing string is used instead.
-
-45.4
+46.0
 ----
 
+Translation updates:
+
+ - Bokmål, Norwegian (Brage Fuglseth)
+ - Danish (Ask Hjorth Larsen)
+ - Italian (Milo Casagrande)
+ - Kabyle (Athmane MOKRAOUI)
+
+46.rc
+-----
+
 Bugs fixed:
+
+- The text direction is now correctly updated when switching between
+  left-to-right and right-to-left locales. (Khalid Abu Shawarib)
+
+Updated dependencies:
+
+- Geoclue 2.6.0 is now required. This 2-year-old release is widely available in
+  distros so this isn't expected to cause issues.
+
+- GTK 4.10 is now explicitly required. 46.beta introduced a dependency on API
+  that is not available in earlier GTK releases; this dependency is now detected
+  earlier in the build.
+
+Translation updates:
+
+- Basque (Asier Sarasua Garmendia)
+- Belarusian (Vasil Pupkin)
+- Bulgarian (Alexander Shopov)
+- Chinese (China) (Luming Zh)
+- Dutch (Nathan Follens)
+- English (United Kingdom) (Andi Chandler)
+- Finnish (Jiri Grönroos)
+- French (Irénée THIRION)
+- Galician (Fran Dieguez)
+- Georgian (Ekaterine Papava)
+- German (Jürgen Benvenuti)
+- Hebrew (Yaron Shahrabani)
+- Hungarian (Balázs Úr)
+- Indonesian (Kukuh Syafaat)
+- Kazakh (Baurzhan Muftakhidinov)
+- Korean (Seong-ho Cho)
+- Latvian (Rūdolfs Mazurs)
+- Lithuanian (Aurimas Černius)
+- Persian (Danial Behzadi)
+- Polish (Piotr Drąg)
+- Russian (Artur S0)
+- Slovenian (Matej Urbančič)
+- Spanish (Daniel Mustieles)
+- Swedish (Anders Jonsson)
+- Turkish (Sabri Ünal)
+- Ukrainian (Yuri Chornoivan)
+
+46.beta
+-------
+
+* Avatars are now generated using HdyAvatar. (#111)
+
+  - In addition, the buttons overlaid on the avatar widget now have tooltips.
+    (!237)
+
+* The Welcome page image is now more appropriately sized and not cropped. (#167)
+
+* The Welcome page now uses PRETTY_NAME from os-release rather than combining
+  the NAME + VERSION_ID fields. (!225)
+
+* The summary page no longer expresses our collective hope that users love
+  GNOME, reducing the overall exuberance of the page. (!232)
+
+Bugs fixed:
+
+* On distributions which show the minimise button in general, Initial Setup
+  no longer shows it, making it harder to hide the Initial Setup window and
+  not know how to get it back. (!237)
+
+* Clicking the ABRT privacy policy link, if present, is now handled. This was
+  a regression in 46.alpha.
+
+* The “minimize” button is no longer shown in the header bar (on distributions
+  which override the defaults to show it on most windows.
 
 * While setting up an enterprise user account, the window would previously
   freeze, potentially triggering the force-quit dialog. This is now fixed.
@@ -16,8 +89,28 @@ Bugs fixed:
 * On distributions which reënable the existing-user mode, the window can now
   be closed with Alt+F4 once again. (!224)
 
-45.3
-----
+Translation updates:
+
+  - Czech (Daniel Rusek)
+  - Galician (Fran Dieguez)
+  - Georgian (Ekaterine Papava)
+  - Russian (Artur S0)
+  - Turkish (Sabri Ünal, Emin Tufan Çetin)
+
+46.alpha
+--------
+
+* GNOME Online Accounts integration has been removed. See
+  https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/202 for further
+  information.
+
+* The WebKitGTK dependency is now optional.
+
+  - If configured without WebKitGTK, the Privacy page will not show any links
+    to privacy policies.
+
+  - If configured with WebKitGTK, only the webkitgtk-6.0 API version is
+    supported; support for the webkit2gtk-5.0 API has been removed.
 
 * Bugs fixed:
 
@@ -28,16 +121,16 @@ Bugs fixed:
     triggered by a GLib change. (!210)
 
 * Translation updates:
- - Bulgarian
- - English (United Kingdom)
- - Esperanto
- - French
- - Friulian
- - Occitan (post 1500)
- - Romanian
- - Serbian
- - Turkish
- - Vietnamese
+  - Bulgarian
+  - English (United Kingdom)
+  - Esperanto
+  - French
+  - Friulian
+  - Occitan (post 1500)
+  - Romanian
+  - Serbian
+  - Turkish
+  - Vietnamese
 
 45.0
 ----

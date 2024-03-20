@@ -1,4 +1,4 @@
-45.4.1
+46.0
 accountsservice-dev
 dconf-dev
 gdm-dev
@@ -14,6 +14,5 @@ pkgconfig(libnma-gtk4)
 pkgconfig(libsecret-1)
 pkgconfig(polkit-gobject-1)
 pkgconfig(pwquality)
-pkgconfig(rest-1.0)
 pkgconfig(webkitgtk-6.0)
 polkit-dev
