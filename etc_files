@@ -1,0 +1,7 @@
+/etc/:
+/etc/xdg/autostart:
+/etc/xdg:
+autostart
+gnome-initial-setup-copy-worker.desktop
+gnome-initial-setup-first-login.desktop
+xdg
