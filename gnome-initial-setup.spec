@@ -7,7 +7,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 46.4
-Release  : 82
+Release  : 83
 URL      : https://download.gnome.org/sources/gnome-initial-setup/46/gnome-initial-setup-46.4.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/46/gnome-initial-setup-46.4.tar.xz
 Summary  : No detailed summary available
