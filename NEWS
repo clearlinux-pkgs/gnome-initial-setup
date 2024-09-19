@@ -1,13 +1,87 @@
-46.4
+47.0
 ----
 
 Translation updates:
 
-- Romanian (Daniel Șerbănescu)
-- Slovak (Jose Riha)
+- Danish (Ask Hjorth Larsen)
+- English (United Kingdom) (Andi Chandler)
+- French (Irénée THIRION)
+- Galician (Fran Dieguez)
+- Greek, Modern (1453-) (Efstathios Iosifidis)
+- Indonesian (Andika Triwidada)
+- Latvian (Rūdolfs Mazurs)
+- Lithuanian (Aurimas Černius)
+- Occitan (post 1500) (Quentin PAGÈS)
+- Polish (Piotr Drąg)
+- Spanish (Daniel)
+- Swedish (Anders Jonsson)
+- Turkish (Sabri Ünal)
 
-46.3
-----
+47.rc
+-----
+
+Translation updates:
+
+- Basque (Asier Sarasua Garmendia)
+- Belarusian (Vasil Pupkin)
+- Bokmål, Norwegian (Brage Fuglseth)
+- Bulgarian (Alexander Shopov)
+- Catalan (Jordi Mas i Hernandez)
+- Chinese (China) (Luming Zh)
+- Czech (Daniel Rusek)
+- Finnish (Jiri Grönroos)
+- Georgian (Ekaterine Papava)
+- German (Jürgen Benvenuti)
+- Hebrew (Yosef Or Boczko)
+- Kazakh (Baurzhan Muftakhidinov)
+- Korean (Seong-ho Cho)
+- Persian (Danial Behzadi)
+- Portuguese (Hugo Carvalho)
+- Portuguese (Brazil) (Juliano de Souza Camargo)
+- Romanian (Daniel Șerbănescu)
+- Russian (Artur S0)
+- Slovak (Jose Riha)
+- Turkish (Sabri Ünal)
+- Ukrainian (Yuri Chornoivan)
+
+47.beta
+-------
+
+* The third-party repositories page, which is currently only displayed on
+  Fedora, now links to a webpage documenting what software is provided by
+  these external repositories.
+
+* On the privacy page, references to Mozilla Location Service have been removed,
+  since this service was shut down earlier this year.
+
+* If an error occurs when applying the user's settings (which in practice means
+  while creating user accounts), it is now displayed in a dialog rather than
+  only in the journal.
+
+* The password page has been lightly refreshed, fixing a bug where the empty
+  input shows the red error style as soon as the page is displayed.
+
+* There is now a field to set an optional password hint, which has been
+  supported by accountsservice for many years. However, since the login screen
+  does not currently know how to display the hint when the user needs it, this
+  field is currently hidden.
+
+Translation updates:
+
+- Hindi (Scrambled 777)
+- Hungarian (Balázs Úr)
+- Romanian (Daniel Șerbănescu)
+- Slovenian (Martin)
+
+47.alpha
+--------
+
+* gnome-initial-setup-copy-worker, which runs when the newly-created user signs
+  in to copy files from the temporary gnome-initial-setup home directory to the
+  user's real home directory, has been rewritten to not use GFile & GVFS. There
+  have previously been issues with GVFS, due to this program running very early
+  in the session startup, & there is no need to unleash the formidable power of
+  GFile to copy a few files.
 
 * The summary page now uses an embedded themed icon for the checkmark, which
   ensures that the icon is loaded at the proper scaling level on hidpi displays.
@@ -20,14 +94,9 @@ Translation updates:
 
 Translation updates:
 
-- Hindi (Scrambled 777)
-
-46.2
-----
-
-Translation updates:
-
+- Hindi (Guntupalli Karunakar)
 - Portuguese (Hugo Carvalho)
+- Thai (Aefgh Threenine)
 
 46.1
 ----
