@@ -1,4 +1,4 @@
-47.4
+48.0
 accountsservice-dev
 dconf-dev
 gdm-dev
@@ -6,6 +6,7 @@ ibus-dev
 libpwquality-dev
 pkgconfig(accountsservice)
 pkgconfig(gdm)
+pkgconfig(gtk4)
 pkgconfig(ibus-1.0)
 pkgconfig(krb5)
 pkgconfig(libnm)

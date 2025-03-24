@@ -1,33 +1,44 @@
-47.4
+48.0
 ----
 
 Translation updates:
 
-- Turkish (Sabri Ünal)
-- Thai (Aefgh Threenine)
+- Basque (Asier Sarasua Garmendia)
+- Bokmål, Norwegian (Brage Fuglseth)
+- Danish (Ask Hjorth Larsen)
+- Galician (Fran Dieguez)
+- Hungarian (Balázs Úr)
+- Korean (Seong-ho Cho)
+- Panjabi (A S Alam)
+- Spanish (Daniel Mustieles)
 
-47.2
-----
-
-* Previously, the timezone page would list duplicate entries for some cities,
-  and selecting the wrong one would crash Initial Setup. In this release these
-  problematic entries are not shown. (#219, Yao Wei (魏銘廷))
-
-* Previous versions would crash on startup when run with GTK 4.17, which has
-  made it a fatal error to use certain functions before gtk_init() has been
-  called. This crash is fixed in this release. (#223)
+48.rc
+-----
 
 Translation updates:
 
-- Catalan (Jordi Mas i Hernandez)
+- Chinese (Taiwan) (Cheng-Chia Tseng)
+- Greek, Modern (1453-) (Giannis Antypas)
+
+48.beta
+-------
+
+On the network page, the Tab key now navigates between the network list and
+other widgets, rather than between each network in the list in turn. (Lukáš
+Tyrychtr)
+
+As a result of the change above, Gtk ≥ 4.17 is now required.
+
+Translation updates:
+
 - Dutch (Nathan Follens)
-- English (United Kingdom) (Andi Chandler)
-- French (Vincent Chatelain)
-- Friulian (Fabio Tomat)
-- Hebrew (Yaron Shahrabani)
-- Indonesian (Andika Triwidada)
+- French (Guillaume Bernard)
+- Interlingua (Emilio Sepúlveda)
 - Lithuanian (Aurimas Černius)
+- Romanian (Daniel Șerbănescu)
 - Serbian (Марко Костић)
+- Thai (Aefgh Threenine)
+- Turkish (Sabri Ünal)
 
 47.1
 ----
