@@ -7,7 +7,7 @@
 #
 Name     : gnome-initial-setup
 Version  : 48.1
-Release  : 89
+Release  : 90
 URL      : https://download.gnome.org/sources/gnome-initial-setup/48/gnome-initial-setup-48.1.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-initial-setup/48/gnome-initial-setup-48.1.tar.xz
 Summary  : No detailed summary available
